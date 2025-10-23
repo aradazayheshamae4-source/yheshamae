@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    overflow-x: hidden; 
+    background-color: #ff00a6;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 36px; /* Adjusted for responsiveness */
+    color: black;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.product-columns {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center align items */
+    gap: 20px; /* Space between columns */
+    margin: 0; /* Remove margin to eliminate white space */
+    padding: 20px; /* Add padding for the product columns */
+    background-color: black; /* Ensure product columns background is also black */
+}
+
+.product-column {
+    flex: 1 1 300px; /* Responsive width */
+    max-width: 300px; /* Limit max width */
+    text-align: center;
+}
+
+.product-column h2, .product-column p {
+    color: white;
+}
+
+.product-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for aesthetics */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff00a6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff00a6;
+}
+
+main {
+    flex: 1; /* Allow the main section to grow and fill available space */
+    background-color: white; /* Set background color to white for the main section */
+    color: black; /* Set text color to black for visibility */
+    padding: 20px; /* Add some padding for content */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+footer {
+    width: 100%; /* Full width for footer */
+    background-color: #a2a2a2; /* Set footer background color */
+    color: white; /* Default text color for footer */
+    padding: 10px 0; /* Padding for footer */
+    text-align: center; /* Center text in footer */
+}
+
+.footer-links a {
+    color: white; /* Ensure link color is white */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Add space between links */
+}
+
+.footer-links a:hover {
+    color: #ff00a6; /* Change link color on hover */
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* Ensure the copyright text is white */
+footer p {
+    color: white; /* Ensure copyright text color is white */
+}
+
+/* Cart Sidebar Styles */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease; /* Animation */
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cart-sidebar.open {
+    right: 0; /* Show the sidebar */
+}
+
+.cart-sidebar h2 {
+    margin-top: 0;
+}
+
+.cart-sidebar #cart-items {
+    max-height: 400px;
+    overflow-y: auto; /* Scroll if items exceed height */
+}
+
+.cart-sidebar p {
+    font-weight: bold;
+}
+
+.cart-sidebar button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff00a6;
+    color: white; /* Fixed the color property */
+    border: none; /* Fixed missing semicolon */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-sidebar button:hover {
+    background-color: #ff00a6; /* Darker blue on hover */
+}
+
+.cart-item {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space between cart items */
+    padding: 10px; /* Padding around each item */
+    border: 1px solid #ccc;
+    /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.cart-item-image {
+    width: 40px; /* Smaller image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.cart-item-name {
+    flex-grow: 1; /* Allow name to take up available space */
+}
+
+.logo-img {
+    width: 100px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    max-height: 100px; /* Optionally limit the height */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: white; /* White background for the modal */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px; /* Padding inside the modal */
+    border: 1px solid #888; /* Border for the modal */
+    width: 300px; /* Could be more or less, depending on screen size */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa; /* Close button color */
+    float: right; /* Position close button to the right */
+    font-size: 28px; /* Font size for close button */
+    font-weight: bold; /* Bold text for close button */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Other styles remain the same */
+
+.logout-button {
+    margin-left: 10px; /* Space between buttons */
+    padding: 10px 20px;
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Profile button styles */
+#profile-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    color: white; /* Change color as needed */
+    margin-left: 15px; /* Space between cart and profile buttons */
+}
+
+.profile-details {
+    max-width: 90%; /* Use a percentage for responsiveness */
+    margin: 40px auto; /* Center the box horizontally and add vertical margin */
+    padding: 30px; /* Increase padding inside the box */
+    border: 1px solid #ccc; /* Border around the box */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center text inside the box */
+}
+
+.profile-details button:hover {
+    background-color: #ff00a6; /* Change color on hover */
+}
+
+/* Profile button styles */
+#profile-button {
+    background-color: #ff00a6; /* Default background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Profile button hover effect */
+#profile-button:hover {
+    background-color: #ff00a6; /* Darker blue on hover */
+}
+
+/* Navigation links hover effect */
+nav ul li a:hover, /* Navigation links hover effect */
+.footer-links a:hover { /* Footer links hover effect */
+    color: #ff00a6; /* Change text color on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+.templar-title {
+    font-size: 48px; /* Adjust the font size to make it larger */
+    transform: scaleX(1.5); /* Stretch the text horizontally */
+    text-align: center; /* Center the text */
+    color: rgb(0, 0, 0); /* Change the color to white for contrast */
+    margin: 20px 0; /* Add some margin above and below */
+    font-weight: bold; /* Make the text bold for better visibility */
+}

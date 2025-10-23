@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt - Abm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            background-color: #f1f1f1; 
+        }
+
+        header {
+            width: 100%; 
+            background-color: black; 
+            color: white; 
+            padding: 10px 0;
+            text-align: center; 
+        }
+
+        footer {
+            width: 100%; /* Full width for footer */
+            background-color: #aaa; /* Set footer background color to #aaa */
+            color: white; /* White text color */
+            padding: 10px 0; /* Padding for footer */
+            text-align: center; /* Center text in footer */
+        }
+
+        .about-container {
+            max-width: 600px; /* Maximum width of the box */
+            margin: 40px auto; /* Center the box horizontally and add vertical margin */
+            padding: 20px; /* Padding inside the box */
+            border: 1px solid #ccc; /* Border around the box */
+            border-radius: 8px; /* Rounded corners */
+            background-color: #f9f9f9; /* Light background color */
+            text-align: center; /* Center text inside the box */
+        }
+
+        .receipt-item {
+            margin: 10px 0; 
+            text-align: center; 
+        }
+
+        .continue-shopping-button {
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            background-color: #ff00a6; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            transition: background-color 0.3s ease; 
+        }
+
+        .continue-shopping-button:hover {
+            background-color: #ff00a6; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Abmlogo1.png" alt="Abmlogo1" class="logo-img">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="smartphones.html">Smartphones</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="search-cart">
+                <input type="text" id="search" placeholder="Search products...">
+                <button id="cart-button">🛒</button>
+                <button id="profile-button" onclick="window.location.href='profile.html'">👤</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="about-container">
+            <h1>Thank You for Your Purchase!</h1>
+            <p>Your order has been placed successfully.</p>
+            <div id="receipt-items"></div>
+            <p id="total-amount">Total Amount: ₱0.00</p>
+            <button class="continue-shopping-button" id="continue-shopping-button">Continue Shopping</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="aboutus.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2017 Abm. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="receipt.js"></script>
+</div>
+</body>
+</html>
